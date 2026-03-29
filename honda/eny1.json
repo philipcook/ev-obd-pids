@@ -35,7 +35,7 @@
   },
   "ext_temp": {
     "command": "227028",
-    "equation": "R-0",
+    "equation": "R",
     "type": "Number",
     "minValue": -40,
     "maxValue": 60
@@ -51,7 +51,7 @@
     "type": "Boolean"
   },
   "is_parked": {
-    "command": "22202A",
+    "command": "224004",
     "equation": "BB==1",
     "type": "Boolean"
   },
@@ -92,9 +92,18 @@
   },
   "voltage": {
     "command": "22202A",
-    "equation": "((BD<<8)+BE) / 20",
+    "equation": "((BD<<8)+BE)/20",
     "type": "Number",
     "minValue": 0,
     "maxValue": 450
+    , "DEV_NOTE": "450 to avoid clipping during tests"
+  },
+  "batt_temp": {
+    "command": "22202C",
+    "equation": "FN - 50",
+    "type": "Number",
+    "minValue": -40,
+    "maxValue": 60,
+    "note": "batt_temp isn't accurate and is very unlikely to be this exact equation. Left to provide information and potentially be improved in the future."
   }
 }
